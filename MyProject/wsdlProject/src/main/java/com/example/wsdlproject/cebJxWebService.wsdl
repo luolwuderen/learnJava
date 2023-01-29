@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.service.web.custom.baiwang.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://service.web.custom.baiwang.com" name="CEBJxWebServiceImplService" targetNamespace="http://impl.service.web.custom.baiwang.com/">
+  <wsdl:import location="http://172.28.30.221:9080/jxindependent/test/cebJxWebService?wsdl=CEBJxWebService.wsdl" namespace="http://service.web.custom.baiwang.com">
+    </wsdl:import>
+  <wsdl:binding name="CEBJxWebServiceImplServiceSoapBinding" type="ns1:CEBJxWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="findInvoice">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findInvoice">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findInvoiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CEBJxWebServiceImplService">
+    <wsdl:port binding="tns:CEBJxWebServiceImplServiceSoapBinding" name="CEBJxWebServiceImplPort">
+      <soap:address location="http://172.28.30.221:9080/jxindependent/test/cebJxWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
